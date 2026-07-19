@@ -16,6 +16,7 @@ Learning objectives:
 import sys
 
 import matplotlib.pyplot as plt
+import numpy as np
 import pandas as pd
 import seaborn as sns
 
@@ -178,8 +179,6 @@ def gdp_vs_vaccination_scatter(df: pd.DataFrame) -> None:
     )
 
     # Trend line using numpy polyfit
-    import numpy as np  # noqa: PLC0415
-
     x = latest["gdp_per_capita"].values
     y = latest["people_fully_vaccinated_per_hundred"].values
     coeffs = np.polyfit(x, y, 1)
